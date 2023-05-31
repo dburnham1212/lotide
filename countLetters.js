@@ -8,7 +8,7 @@ const assertEqual = function(actual, expected) {
 };
 
 const countLetters = function(input) {
-  input = input.toLowerCase();//Normalize the string to be lower case
+  input = input.split(" ").join("").toLowerCase();//Normalize the string to be lower case
   let returnObject = {};//create an empty object to write to
   for (const char of input) {//cycle through input
     if (returnObject[char]) {//check if we already have a value at the key
@@ -19,6 +19,8 @@ const countLetters = function(input) {
   }
   return returnObject;// return the created object
 };
+
+console.log(countLetters("lighthouse in the house"));
 
 let result = countLetters("lighthouse in the house");
 
