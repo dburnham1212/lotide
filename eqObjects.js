@@ -31,12 +31,18 @@ const eqObjects = function(object1, object2) {
     }
     if (object1[key] !== object2[key]) {//if object 2 does have the key from object 1 but the values are inequal
       if (!Array.isArray(object1[key]) || !Array.isArray(object2[key])) {//if either of the values is not an array
-        return false;//return false
+        if(typeof object1[key] === "object" && typeof object2[key] === "object"){
+          if(!eqObjects(object1[key], object2[key])){
+            return false
+          }
+        } else {
+          return false;//return false
+        }
+      } else {
+        if (!eqArrays(object1[key], object2[key])) {// if both values are an array but are inequal
+          return false;
+        }
       }  
-      if (!eqArrays(object1[key], object2[key])) {// if both values are an array but are inequal
-        return false;
-      }
-      
     }
   }
   return true;
@@ -67,5 +73,6 @@ assertEqual(eqObjects(multiColorShirtObject  , longSleeveMultiColorShirtObject),
 
 assertEqual(eqObjects({ a: { z: 1 }, b: 2 }, { a: { z: 1 }, b: 2 }), true); // should not work currently
 assertEqual(eqObjects({ a:1, b: { z: 2 }}, { a: 1, b: { z: 2 } }), true); // should not work currently
-assertEqual(eqObjects({ a: { z: 1 }, b: 2 }, { a: { z: 1 }, b: { x : 1} }), false); // should not work currently
+assertEqual(eqObjects({ a: { z: 1 }, b: 2 }, { a: { z: 1 }, b: { x : 1 } }), false); // should not work currently
+assertEqual(eqObjects({ a: { z: {d: 1} }, b: 2 }, { a: { z: { d: 1 } }, b: 2 }), true); // should not work currently
 assertEqual(eqObjects({ a:1, b: { z: 2 }}, { a: 1, b: { z: 2 } }), true); // should not work currently
