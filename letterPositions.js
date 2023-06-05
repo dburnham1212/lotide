@@ -33,6 +33,7 @@ const letterPositions = function(sentence) {
     return returnObject;// return the created object
 };
 
+module.exports = letterPositions;
 
 //TEST CASES
 console.log(letterPositions("lighthouse in the house"));

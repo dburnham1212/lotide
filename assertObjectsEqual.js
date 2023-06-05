@@ -42,6 +42,8 @@ const eqObjects = function(object1, object2) {
   return true;
 };
 
+module.exports = assertObjectsEqual;
+
 const shirtObject = { color: "red", size: "medium" };
 const anotherShirtObject = { size: "medium", color: "red" };
 const yetAnotherShirtObject =  { size: "small", color: "red" };

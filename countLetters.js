@@ -1,3 +1,5 @@
+const { countOnly } = require(".");
+
 // FUNCTION IMPLEMENTATION
 const assertEqual = function(actual, expected) {
   if (actual === expected) {
@@ -19,6 +21,8 @@ const countLetters = function(input) {
   }
   return returnObject;// return the created object
 };
+
+module.exports = countLetters;
 
 console.log(countLetters("lighthouse in the house"));
 

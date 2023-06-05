@@ -17,6 +17,8 @@ const findKey = function(object, callback){
   return "No Key Found";
 };
 
+module.exports = findKey;
+
 const result1 = findKey({
   "Blue Hill": { stars: 1 },
   "Akaleri":   { stars: 3 },

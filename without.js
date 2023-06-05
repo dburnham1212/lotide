@@ -30,6 +30,8 @@ const without = function(arr1, arr2){
   return retArr;// return the array of all wanted values
 }
 
+module.exports = without;
+
 console.log(without([1, 2, 3], [1])); // => [2, 3]
 console.log(without(["1", "2", "3"], [1, 2, "3"])); // => ["1", "2"]
 
