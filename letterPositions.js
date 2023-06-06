@@ -34,17 +34,3 @@ const letterPositions = function(sentence) {
 };
 
 module.exports = letterPositions;
-
-//TEST CASES
-console.log(letterPositions("lighthouse in the house"));
-
-let result = letterPositions("lighthouse in the house");
-
-assertArraysEqual(result["l"], [0]);
-assertArraysEqual(result["h"], [3, 5, 15, 18]);
-assertArraysEqual(result["t"], [4, 14]);
-assertArraysEqual(result["u"], [7, 20]);
-assertArraysEqual(result["e"], [9, 16, 22]);
-
-assertArraysEqual(letterPositions("hello").e, [1]);
-assertArraysEqual(letterPositions("hello").l, [2, 3]);

@@ -1,3 +1,4 @@
+// FUNCTION IMPLEMENTATION
 const eqArrays = function(arr1, arr2){
   if(arr1.length !== arr2.length) {// check if the arrays are equal in length
     return false;//if not return false

@@ -1,5 +1,4 @@
 //Require External Functions
-const assertEqual = require('../assertEqual');
 const head = require('../head');
 
 //TESTING USING MOCHA & CHAI

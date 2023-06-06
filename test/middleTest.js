@@ -1,4 +1,3 @@
-const assertArraysEqual = require("../assertArraysEqual");
 const middle = require("../middle.js");
 
 //TEST CODE USING MOCHA AND CHAI
